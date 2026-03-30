@@ -6,7 +6,8 @@ import Practical from './Practical.jsx'
 function App() {
 
   return (
-    <div>
+    <div className="wrapper">
+      <h1>CV Application</h1>
       <General />
       <Education />
       <Practical />

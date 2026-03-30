@@ -20,13 +20,13 @@ function General() {
     const form = (
         <form>
             <label htmlFor="name">Name: </label><br />
-            <input type="text" name="name" id="name" value={fields.name} onChange={handleChange}/><br />
+            <input type="text" name="name" id="name" value={fields.name} onChange={handleChange} /><br />
 
             <label htmlFor="email">Email: </label><br />
-            <input type="email" name="email" id="email" value={fields.email} onChange={handleChange}/><br />
+            <input type="email" name="email" id="email" value={fields.email} onChange={handleChange} /><br />
 
             <label htmlFor="phone">Phone: </label><br />
-            <input type="tel" name="phone" id="phone" value={fields.phone} onChange={handleChange}/><br />
+            <input type="tel" name="phone" id="phone" value={fields.phone} onChange={handleChange} /><br />
         </form>
     );
 
@@ -40,13 +40,15 @@ function General() {
 
     return (
         <div>
-            <h1>General</h1>
+            <div className="section-header">
+                <h2>General</h2>
+                <button onClick={handleSubmit}>
+                    {isEditing ? "Submit" : "Edit"}
+                </button>
+            </div>
             <div className="content">
                 {isEditing ? form : locked}
             </div>
-            <button onClick={handleSubmit}>
-                {isEditing ? "Submit" : "Edit"}
-            </button>
         </div>
     );
 }
