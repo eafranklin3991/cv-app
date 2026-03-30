@@ -20,13 +20,13 @@ function General() {
     const form = (
         <form>
             <label htmlFor="name">Name: </label><br />
-            <input type="text" name="name" id="name" value={fields.name}/><br />
+            <input type="text" name="name" id="name" value={fields.name} onChange={handleChange}/><br />
 
             <label htmlFor="email">Email: </label><br />
-            <input type="email" name="email" id="email" value={fields.email}/><br />
+            <input type="email" name="email" id="email" value={fields.email} onChange={handleChange}/><br />
 
             <label htmlFor="phone">Phone: </label><br />
-            <input type="tel" name="phone" id="phone" value={fields.phone}/><br />
+            <input type="tel" name="phone" id="phone" value={fields.phone} onChange={handleChange}/><br />
         </form>
     );
 
