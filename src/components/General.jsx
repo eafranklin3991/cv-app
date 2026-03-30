@@ -1,22 +1,14 @@
 import { useState } from 'react'
 
 function General() {
-    const stateValues = ["locked", "edit"];
-
     const [stateValue, setStateValue] = useState("locked");
 
-    const onEditClick = (state) => () => {
-        setStateValue(state);
-
-        const contentContainer = document.querySelector(".content");
-
-        contentContainer.innerHTML = state === "locked" ? form : "";
-
-        stateValue = "edit";
+    const onEditClick = () => {
+        setStateValue(prev => prev === "locked" ? "edit" : "locked");
     };
 
-    const form = <>
-        <form action="">
+    const form = (
+        <form>
             <label htmlFor="name">Name: </label><br />
             <input type="text" name="name" id="name" /><br />
 
@@ -25,16 +17,18 @@ function General() {
 
             <label htmlFor="phone">Phone: </label><br />
             <input type="tel" name="phone" id="phone" /><br />
-
-            <input type="submit" value="Submit" />
         </form>
-    </>
+    );
 
     return (
         <div>
             <h1>General</h1>
-            <div className="content">Hi</div>
-            <button onClick={onEditClick(stateValue)}>Edit</button>
+            <div className="content">
+                {stateValue === "edit" ? form : "Hi"}
+            </div>
+            <button onClick={onEditClick}>
+                {stateValue === "locked" ? "Edit" : "Submit"}
+            </button>
         </div>
     );
 }
