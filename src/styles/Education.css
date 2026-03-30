@@ -1,0 +1,5 @@
+.school:not(:last-child) {
+    border-bottom: 1px solid white;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
