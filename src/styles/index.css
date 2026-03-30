@@ -1,10 +1,40 @@
+@font-face {
+    font-family: "Roboto";
+    src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+}
+
 body {
     background-color: black;
     color: white;
     margin: 0;
+    font-family: 'Roboto', monospace;
 }
 
 .wrapper {
     max-inline-size: 720px;
     margin: 0 auto;
+}
+
+.section-header {
+    background-color: rebeccapurple;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+
+    border-image: linear-gradient(to right, rebeccapurple 0%, white 100%) 1;
+    border-width: 0.2rem;
+    border-style: solid;
+}
+
+.content {
+    padding: 1rem;
+}
+
+button {
+    background-color: white;
+    border-radius: 4rem;
+    font-family: 'Roboto', monospace;
+    padding: 0.5rem 2rem;
 }
